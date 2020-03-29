@@ -170,14 +170,14 @@ header>#project { font-size: 1.45rem; }
 
 /* Timeline*/
 .vis-item, .vis-item.vis-line, .vis-item.vis-dot {
-    background: transparent;
-    border-width: 0;  
+    background: none;
+    border: 0;  
 }
 
-.vis-item:hover, .vis-item.vis-selected {
+.vis-item.vis-selected {
     filter: invert(38%) sepia(63%) saturate(2619%) hue-rotate(230deg) brightness(100%) contrast(87%);
-    background: transparent;
-    border-width: 0;  
+    background: none;
+    border: 0;  
 }
 
 .vis-item:hover {
