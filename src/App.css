@@ -3,45 +3,32 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Buttons Style */
-button {
-    background-color: transparent;
-    border: 3.5px solid #FFFFFF;
-    color: white;
-    font-size: .9rem;
-    font-weight: bold;
-    padding: 1px 15px;
-    border-radius: 30px;
-}
-button:hover {
-    border-color: #7B68EE;
-    color: #7B68EE;
-}
-button:focus {
-    outline: none;
-}
+button:hover {cursor: pointer;}
 
 /* Header */
 header {
     padding: 10px;
     height: 35px;
     background-color: black;
-    font-size: 2em;
+    font-size: 2rem;
     color: white;
 }
+a, a:visited, a:active {
+  color: white;
+  text-decoration: none; 
+}
+header>#project { font-size: 1.45rem; }
 
-/* Top Container's Filter */
+/* Top Container & Background */
     .top-container {
         display: flex;
         justify-content: center;
 
-        background-image: url("media/jumping-orca.jpg");
+        background-image: url("media/orca-jumping.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         height: 480px;
-        max-width: 100%;
     }
 
     .background-filter {
@@ -60,114 +47,148 @@ header {
     }
 
 /* Widget */
-.Widget {
-   max-width: 800px;
-   margin: 15px;
+    .Widget {
+    max-width: 800px;
+    margin: 15px;
 
-    /* Grid */
-    display: grid;
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-    ". pb . "
-    "ppb . a"
-    " w w w "
-    "o . no "
-    ;
-}
-
-/* Progress Bar */
-    .progress-bar {
-        grid-area: pb;
-        background-color: transparent;
-        border: 1px solid white;
-        border-radius: 3px;
-        width: 100px;
-        height: 3px;
+        /* Grid */
+        display: grid;
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        ". pb . "
+        "ppb . a"
+        " w w w "
+        "o . no "
+        ;
     }
 
-    .progress-bar>div {
-        background-color: white;
-        border-radius: 3px;
-        margin: -1px;
-        width: 40%; /* Adjust with Javascript */
-        height: 4px;
+    /* Buttons Style */
+        .Widget button {
+            background-color: transparent;
+            border: 3.5px solid #FFFFFF;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 1px 15px;
+            border-radius: 30px;
+        }
+        .Widget button:hover {
+            border-color: #7B68EE;
+            color: #7B68EE;
+        }
+        .Widget button:focus {
+            outline: none;
+        }
+
+    /* Progress Bar */
+        .progress-bar {
+            grid-area: pb;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 3px;
+            width: 100px;
+            height: 3px;
+        }
+
+        .progress-bar>div {
+            background-color: white;
+            border-radius: 3px;
+            margin: -1px;
+            width: 40%; /* Adjust with Javascript */
+            height: 5px;
+        }
+
+    /* Play Pause Button */
+        .play-pause-button {
+            grid-area: ppb;
+            position: relative;
+            border-radius: 50%;
+            height: 41.25px;
+            width: 41.25px;
+        }
+
+        .pause {
+            position: absolute;
+            left: 50%;
+            margin-left: -10.25px;
+            top: 50%;
+            margin-top: -7.875px;
+            border-right: 3.5px solid #FFFFFF;
+            border-bottom: 3.5px solid #FFFFFF;
+            height: 12px;
+            width: 12px;
+            transform: rotateZ(-45deg);
+        }
+
+        .play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-right: 3.5px solid #FFFFFF;
+            border-left: 3.5px solid #FFFFFF;
+            height: 18px;
+            width: 6px;
+        }
+
+        .play-pause-button:hover .pause {
+            border-color: #7B68EE
+        }
+        .play-pause-button:hover .play{
+            border-color: #7B68EE
+        }
+
+    /* Accuracy Button */
+    button.accuracy {
+        grid-area: a;
+        border: none;
     }
 
-/* Play Pause Button */
-    .play-pause-button {
-        grid-area: ppb;
-        position: relative;
-        border-radius: 50%;
-        height: 41.25px;
-        width: 41.25px;
+    /* Waveform Container */
+    .waveform-container {
+        grid-area: w;
+        width: 100%;   
     }
 
-    .pause {
-        position: absolute;
-        left: 50%;
-        margin-left: -10.25px;
-        top: 50%;
-        margin-top: -7.875px;
-        border-right: 3.5px solid #FFFFFF;
-        border-bottom: 3.5px solid #FFFFFF;
-        height: 12px;
-        width: 12px;
-        transform: rotateZ(-45deg);
-    }
+    /* Learner Buttons */
+    .not-query { display: none; }
+    .orca { grid-area: o; }
+    .not-orca { grid-area: no; }
 
-    .play {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-right: 3.5px solid #FFFFFF;
-        border-left: 3.5px solid #FFFFFF;
-        height: 18px;
-        width: 6px;
-    }
-
-    .play-pause-button:hover .pause {
-        border-color: #7B68EE
-    }
-    .play-pause-button:hover .play{
-        border-color: #7B68EE
-    }
-
-/* Accuracy Button */
-.accuracy {
-    grid-area: a;
-    border: none;
-}
-
-/* Waveform Container */
-.waveform-container {
-    grid-area: w;
-    width: 100%;   
-}
-
-/* Learner Buttons */
-.orca { grid-area: o; }
-.not-orca { grid-area: no; }
-
-/* Timeline */
-.Timeline {
+/* Bottom Container */
+.bottom-container {
     padding: 15px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-
+    margin: 30px auto;
     max-width: 1200px;
 }
 
+/* Timeline*/
+.vis-item, .vis-item.vis-line, .vis-item.vis-dot {
+    background: transparent;
+    border-width: 0;  
+}
+
+.vis-item:hover, .vis-item.vis-selected {
+    filter: invert(38%) sepia(63%) saturate(2619%) hue-rotate(230deg) brightness(100%) contrast(87%);
+    background: transparent;
+    border-width: 0;  
+}
+
+.vis-item:hover {
+    filter: invert(38%) sepia(63%) saturate(2619%) hue-rotate(230deg) brightness(100%) contrast(87%);
+    cursor: pointer;
+}
+   
+
 @media (min-width: 500px) {
     .Widget {
-        grid-template-columns: 1fr 2fr 6fr 2fr 1fr;
+        grid-template-columns: 1fr 4fr 2fr 4fr 1fr;
         grid-template-areas:
         ". . pb . ."
         "ppb . . . a"
