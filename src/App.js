@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import SpectrogramPlugin from 'wavesurfer.js/dist/plugin/wavesurfer.spectrogram.min.js';
-import colormap from 'colormap';
+import colormap from './colormap.json';
 import { DataSet, Timeline } from "vis-timeline/standalone";
 
 import './App.css';
@@ -14,12 +14,6 @@ class Widget extends Component {
   }
 
   componentDidMount() {
-    const colors = colormap({
-      colormap: 'temperature',
-      nshades: 256,
-      format: 'float'
-    });
-
     this.wavesurfer = WaveSurfer.create({
       container: '#waveform',
       waveColor: '#FFFFFF',
@@ -36,7 +30,7 @@ class Widget extends Component {
       plugins: [
         SpectrogramPlugin.create({
           container: '#waveform-spectrogram',
-          colorMap: colors
+          colorMap: colormap
         })
       ]
     });

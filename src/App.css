@@ -172,6 +172,7 @@ header>#project { font-size: 1.45rem; }
 
 /* Timeline*/
 .vis-item, .vis-item.vis-line, .vis-item.vis-dot, .vis-item.vis-selected {
+    /* vis-timeline's css overwrites this, therefore the !important */
     background: none !important;
     border: 0 !important;  
 }
