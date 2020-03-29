@@ -3,7 +3,9 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-button:hover {cursor: pointer;}
+
+/* to change cursor when hovering */
+button:hover, .vis-item:hover { cursor: pointer; }
 
 /* Header */
 header {
@@ -169,20 +171,13 @@ header>#project { font-size: 1.45rem; }
 }
 
 /* Timeline*/
-.vis-item, .vis-item.vis-line, .vis-item.vis-dot {
-    background: none;
-    border: 0;  
+.vis-item, .vis-item.vis-line, .vis-item.vis-dot, .vis-item.vis-selected {
+    background: none !important;
+    border: 0 !important;  
 }
 
-.vis-item.vis-selected {
+.vis-item:hover, .vis-item.vis-selected  {
     filter: invert(38%) sepia(63%) saturate(2619%) hue-rotate(230deg) brightness(100%) contrast(87%);
-    background: none;
-    border: 0;  
-}
-
-.vis-item:hover {
-    filter: invert(38%) sepia(63%) saturate(2619%) hue-rotate(230deg) brightness(100%) contrast(87%);
-    cursor: pointer;
 }
    
 

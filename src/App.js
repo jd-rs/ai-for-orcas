@@ -3,7 +3,9 @@ import WaveSurfer from 'wavesurfer.js';
 import SpectrogramPlugin from 'wavesurfer.js/dist/plugin/wavesurfer.spectrogram.min.js';
 import colormap from 'colormap';
 import { DataSet, Timeline } from "vis-timeline/standalone";
+
 import './App.css';
+
 
 class Widget extends Component {
   constructor(props) {
@@ -80,6 +82,7 @@ class Widget extends Component {
     );
   }
 }
+
 
 class App extends Component {
   constructor(props) {
