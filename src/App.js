@@ -34,15 +34,14 @@ class Widget extends Component {
         })
       ]
     });
-
-    this.wavesurfer.load(`sounds/sound${this.props.item}.wav`);
+    this.wavesurfer.load(`https://jd-r-bucket.s3.amazonaws.com/sounds/sound${this.props.item}.wav`);
 
     this.wavesurfer.on('finish', () => this.setState({ play: false }));
   };
 
   componentDidUpdate(prevProps) {
     if (this.props.item !== prevProps.item) {
-      this.wavesurfer.load(`sounds/sound${this.props.item}.wav`);
+      this.wavesurfer.load(`https://jd-r-bucket.s3.amazonaws.com/sounds/sound${this.props.item}.wav`);
       this.setState({
         play: false,
       });
